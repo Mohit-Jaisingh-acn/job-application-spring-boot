@@ -40,6 +40,7 @@ public class CompanyServiceImpl implements CompanyService {
             company.setName(updatedCompany.getName());
             company.setDescription(updatedCompany.getDescription());
             company.setJobs(updatedCompany.getJobs());
+            company.setReviews(updatedCompany.getReviews());
             companyRepository.save(company);
             return true;
         }
@@ -54,4 +55,6 @@ public class CompanyServiceImpl implements CompanyService {
         }
         return false;
     }
+    //ToDo: Deleting company that has jobs throws an error.
+    // Fetch the ids of jobs of related company and call deleteJob() for them before deleting the Company.
 }
